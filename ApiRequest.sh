@@ -1,3 +1,11 @@
+set -euox pipefail
+
+# -e  Exit immediately if any command fails.
+# -u  Treat referencing unset variables as an error.
+# -o  Set the exit status of a pipeline to the exit status of the last non-zero command.
+# -x  Print each command before executing it (for debugging purposes).
+
+
 api="https://digi-api.com/api/v1/digimon"
 
 
