@@ -1,0 +1,22 @@
+#!/bin/bash
+#7)
+set -euox pipefail
+
+count=1
+number=1
+
+while [ $count -le $# ]
+do
+	current=${!count} 
+      # To get the current argument we can use indirect expansion
+	if [ $current -gt $number ]
+        then
+              number=$current
+        fi
+        count=$(($count+1))
+done    
+
+echo "The highest number is : $number"
+
+#indirect expansion 
+#${!} 
