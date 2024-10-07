@@ -1,0 +1,21 @@
+#!/bin/bash
+#8)
+set -euox pipefail
+
+echo "Enter a number"
+read num
+reverse=0
+
+while [ $num -gt 0 ]
+do
+    remainder=$(( $num % 10 ))
+    reverse=$(( $reverse * 10 + $remainder ))
+    num=$(( $num / 10 ))
+done
+
+echo "Reversed number is : $reverse"
+
+
+#remainder=$(( $num % 10 )) #using this will get the last digit
+#reverse=$(( $reverse * 10 + $remainder )) # this is the way to add a new value
+#num=$(( $num / 10 )) #with this with this operation it will transform 1234 to this 123,4 but without the bc this operation will not accept decimals.
