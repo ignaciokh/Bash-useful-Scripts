@@ -1,0 +1,12 @@
+#!/bin/bash
+#9)
+set -euox pipefail
+
+file=$1
+sed '/^$/d' file > outputfile.txt
+
+# d is to delete and ^$ indicated a blank line 
+
+
+#grep -v '^$' file > outputfile
+#awk '!/^$/' file > outputfile
