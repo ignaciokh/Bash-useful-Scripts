@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -euox pipefail
+
+echo "Enter a number"
+read num 
+
+
+reverse=""
+
+for (( i=${#num}-1; i>=0; i--))
+do
+    reverse="$reverse${num:$i:1}"
+done
+
+
+echo "reversed number is: $reverse"
+
+
+# ${variable:start:length}
+# reverse += something; = reverse += something;
+#
+
