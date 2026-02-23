@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+#set -euox pipefail
+
+string=$(tr -d "[:space:]"  < /home/nacho/Desktop/new_file)
+array=()
+read -r -p "which letter do you want to search: " letter
+count=0
+
+for (( i=0; i<${#string}; i++ )); do
+    char="${string:$i:1}"
+    [[ $char == " " ]] && continue
+    array+=("$char")   
+done
+
+for i in ${array[@]}; do
+    if [ "$i" = "${letter}" ];
+    then
+        count=$(($count+1))
+    fi
+done
+
+echo "${array[@]}"
+echo "letter has been foind ${count} times"
