@@ -1,0 +1,16 @@
+#! /bin/bash
+#
+
+read -p "Add the number of sequences " seq_numb
+a=0
+b=1
+arr=($a,$b)
+
+for (( i=2; i < seq_numb; i++ ));do
+    next=$(( $a + $b ))
+    arr+=("$next")
+    a=$b
+    b=${arr[-1]}
+done
+
+echo ${arr[@]}
